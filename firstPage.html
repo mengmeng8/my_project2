@@ -1,0 +1,303 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>首页</title>
+<link href="styles/css/firstPage.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<!--头部-->
+<header>
+  <div class="container">
+  <div class="logo floatl"> </div>
+  <div class="clear"></div>
+  <div class="search floatr">
+  <div class="select_box floatl">
+    <select>
+      <option value="项目">项目</option>
+      <option value="项目1">项目1</option>
+    </select>
+  </div>
+  <input type="text" placeholder="请输入商品关键字" class="search_box" >
+  <div class="search_btn floatr">
+    <input type="button" class="search_btn1" >
+    </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="header_title">
+    <nav>
+    <ul class="nav ">
+      <li><a href="firstPage.html">首页</a></li>
+      <li><a href="project.html">众筹项目</a></li>
+      <li><a href="personal.html">众筹发布</a></li>
+      <li><a href="#">新手指引</a></li>
+      <li><a href="#">安全承诺</a></li>
+      <li><a href="#">联系我们</a></li>
+      <li><a href="#">社区公益</a></li>
+    </ul>
+    <nav>
+    <div class="header_btn"> <a href="login.html" class="login_btn"><span>登陆</span></a> <a href="register.html" class="reg_btn">注册</span></a> </div>
+   </div>
+</header>
+<!--article-->
+<article>
+  <section>
+    <div class="firstPage-top">
+     <div id="cont">
+			<div class="lii"></div>
+			<div class="btn" id="btn">
+			  <ul>
+				<li class="on">1</li>
+				<li class="on1">2</li>
+				<li class="on2">3</li>
+				<li class="on3">4</li>
+				<li class="on4">5</li>
+				<div class="clear"></div>
+			  </ul>
+			</div>
+			<div class="imm" id="imm"> <a href="1" target="_blank"><img src="styles/images/01.jpg" ></a> <a href="2" target="_blank"><img src="styles/images/02.jpg" ></a> <a href="3" target="_blank"><img src="styles/images/03.jpg" ></a> <a href="4" target="_blank"><img src="styles/images/04.jpg" ></a> <a href="5" target="_blank"><img src="styles/images/05.jpg"></a> </div>
+			<div id="jiao"> <a href="#" id="left">&lt;</a> <a href="#" id="right">&gt;</a> </div>
+      </div>
+      <script>
+    var tt=null;
+   var kkk;
+   var n=0;
+   var timer=0;
+    window.onload=function(){
+        var li=document.getElementById("btn").getElementsByTagName("li");
+        kkk=document.getElementById("imm").getElementsByTagName("a");
+        for(var i=0;i<kkk.length;i++){
+            if(i!=0){
+                kkk[i].style.opacity=0;
+            }
+        }
+        for(var j=0;j<li.length;j++){
+                li[j].onmouseover=function(){
+                    var that=this;
+                    tt=setTimeout(function(){ var index=that.innerHTML-1;
+                        n=index;
+                        if(index <kkk.length){
+                            for(var o=0;o<li.length;o++){
+                                li[o].className="";
+                                kkk[o].style.opacity=0;
+                                kkk[o].style.zIndex=9998;
+
+                            }
+                            that.className="on";
+                            kkk[index].style.opacity=1;
+                            kkk[index].style.zIndex=9999;
+                            kkk[index].style.transition="opacity 0.5s";
+                           leftf(-300,0,kkk[index]);
+                        }
+                    },100);
+
+                };
+            li[j].onmouseout=function(){
+                clearTimeout(tt)
+            }
+            }
+
+
+
+        var left=document.getElementById("left");
+        var right=document.getElementById("right");
+        var jiao=document.getElementById("jiao");
+        var body=document.getElementById("cont");
+
+       //定义图片切换函数
+        timer = setInterval("autoplay()",2000);
+        body.onmouseover=function(){
+            jiao.style.display="block";
+            clearInterval(timer);
+        };
+        body.onmouseout=function(){
+            jiao.style.display="none";
+            timer = setInterval("autoplay()",2000);
+        };
+        //定义点击按钮切换图片函数
+        left.onclick=function(){
+            if(n>0){
+                n--
+            }else if(n==0){
+                n=kkk.length-1;
+            }
+            var li=document.getElementById("btn").getElementsByTagName("li");
+            li[n].onmouseover()
+        };
+        right.onclick=function(){
+            n=n>=(kkk.length-1)?0:++n;
+            var li=document.getElementById("btn").getElementsByTagName("li");
+            li[n].onmouseover()
+        }
+    }
+
+    ;
+    function leftf(start,end,ele){ 
+        var tt=setInterval(function (){
+        start+=20;
+        ele.style.left=start+"px";
+        if(start==end){
+            clearInterval(tt)
+        }
+                },30)
+    }
+
+    function autoplay(){
+        n=n>=(kkk.length-1)?0:++n;
+        var li=document.getElementById("btn").getElementsByTagName("li");
+        li[n].onmouseover()
+    };
+</script> 
+    </div>
+    <div class="firstPage-count-title">
+      <div class="firstPage-count-top"> <span class="logical-font">36</span > <span>个</span> <span  class="logical-font">1，043</span > <span >万元</span> <span  class="logical-font">11，619</span> <span>位</span> </div>
+      <div class="firstPage-count-bottom"> <span class="logical-bottom-font">累计项目数量</span > <span  class="logical-bottom-font">累计融资额</span > <span  class="logical-bottom-font">累计投资认证人</span> </div>
+    </div>
+    <div class="firstPage-plan-project">
+    <div class="list-title">
+      <h2>筹资进行中</h2>
+      <div class="list-new-project">
+        <ul>
+          <li><a href="#">果蔬种植/</a></li>
+          <li><a href="#">新鲜果品/</a></li>
+          <li><a href="#">生态养殖/</a></li>
+          <li><a href="#">有机蔬菜/</a></li>
+          <li><a href="#">生物科技/</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="question-icn-list floatr">
+      <ul>
+        <a href="#">
+        <li><img src="styles/images/question-icn-1.jpg" class="question-icn"></li>
+        </a> <a href="#">
+        <li class="quention-font">调查<br/>
+          问卷</li>
+        </a> <a href="#">
+        <li><img src="styles/images/question-icn-2.jpg" class="question-icn"></li>
+        </a> <a href="#">
+        <li><img src="styles/images/question-icn-3.jpg" class="question-icn"></li>
+        </a> <a href="#">
+        <li><img src="styles/images/question-icn-4.jpg" class="question-icn"></li>
+        </a>
+      </ul>
+    </div>
+    <div class="pic-list floatl">
+      <div class="list-1 floatl"> <img src="styles/images/project_01.jpg" class="xiangmu-picture">
+        <h5>有机蔬菜</h5>
+        <h3>更天然，更绿色，专注于专业的蔬菜培养方式</h3>
+        <p>融资目标：1500万 剩余时间：50天</p>
+        <h6 class="percentage floatr">110%</h6>
+        <div class="clear"></div>
+        <span class="pink-line"></span> <span class="blue-line"></span><br/>
+        <span class="place-icn"> <img src="styles/images/small-icn-1.jpg">浙江杭州 </span> <span class="distance-icn"> <img src="styles/images/small-icn-2.jpg"> 1600 </span> <span class="comment-icn"><img src="styles/images/small-icn-3.jpg"> 8 </span> </div>
+      <div class="list-2 "> <img src="styles/images/project_02.jpg" class="xiangmu-picture">
+        <h5>有机蔬菜</h5>
+        <h3>更天然，更绿色，专注于专业的蔬菜培养方式</h3>
+        <p>融资目标：1500万 剩余时间：50天</p>
+        <h6 class="percentage floatr">110%</h6>
+        <div class="clear"></div>
+        <span class="pink-line"></span> <span class="blue-line"></span><br/>
+        <span class="place-icn"> <img src="styles/images/small-icn-1.jpg">浙江杭州 </span> <span class="distance-icn"> <img src="styles/images/small-icn-2.jpg"> 1600 </span> <span class="comment-icn"><img src="styles/images/small-icn-3.jpg"> 8 </span> </div>
+      <div class="list-3 floatr"> <img src="styles/images/project_03.jpg" class="xiangmu-picture">
+        <h5>有机蔬菜</h5>
+        <h3>更天然，更绿色，专注于专业的蔬菜培养方式</h3>
+        <p>融资目标：1500万 剩余时间：50天</p>
+        <h6 class="percentage floatr">110%</h6>
+        <div class="clear"></div>
+        <span class="pink-line"></span> <span class="blue-line"></span><br/>
+        <span class="place-icn"> <img src="styles/images/small-icn-1.jpg">浙江杭州 </span> <span class="distance-icn"> <img src="styles/images/small-icn-2.jpg"> 1600 </span> <span class="comment-icn"> <img src="styles/images/small-icn-3.jpg"> 8 </span> </div>
+    </div>
+    <div class="clear">
+    <div>
+    <div class="pic-list floatl">
+      <div class="list-1 floatl"> <img src="styles/images/project_04.jpg" class="xiangmu-picture">
+        <h5>有机蔬菜</h5>
+        <h3>更天然，更绿色，专注于专业的蔬菜培养方式</h3>
+        <p>融资目标：1500万 剩余时间：50天</p>
+        <h6 class="percentage floatr">110%</h6>
+        <div class="clear"></div>
+        <span class="pink-line"></span> <span class="blue-line"></span><br/>
+        <span class="place-icn"> <img src="styles/images/small-icn-1.jpg">浙江杭州 </span> <span class="distance-icn"> <img src="styles/images/small-icn-2.jpg"> 1600 </span> <span class="comment-icn"> <img src="styles/images/small-icn-3.jpg"> 8 </span> </div>
+      <div class="list-2 "> <img src="styles/images/project_05.jpg" class="xiangmu-picture">
+        <h5>有机蔬菜</h5>
+        <h3>更天然，更绿色，专注于专业的蔬菜培养方式</h3>
+        <p>融资目标：1500万 剩余时间：50天</p>
+        <h6 class="percentage floatr">110%</h6>
+        <div class="clear"></div>
+        <span class="pink-line"></span> <span class="blue-line"></span><br/>
+        <span class="place-icn"> <img src="styles/images/small-icn-1.jpg">浙江杭州 </span> <span class="distance-icn"> <img src="styles/images/small-icn-2.jpg"> 1600 </span> <span class="comment-icn"> <img src="styles/images/small-icn-3.jpg"> 8 </span> </div>
+      <div class="list-3 floatr"> <img src="styles/images/project_06.jpg" class="xiangmu-picture">
+        <h5>有机蔬菜</h5>
+        <h3>更天然，更绿色，专注于专业的蔬菜培养方式</h3>
+        <p>融资目标：1500万 剩余时间：50天</p>
+        <h6 class="percentage floatr">110%</h6>
+        <div class="clear"></div>
+        <span class="pink-line"></span> <span class="blue-line"></span><br/>
+        <span class="place-icn"> <img src="styles/images/small-icn-1.jpg">浙江杭州 </span> <span class="distance-icn"> <img src="styles/images/small-icn-2.jpg"> 1600 </span> <span class="comment-icn"> <img src="styles/images/small-icn-3.jpg"> 8 </span> </div>
+    </div>
+    <div class="clear">
+    <div> </div>
+    <div class="firstPage-top-look-more">
+      <p>浏览更多项目</p>
+    </div>
+  </section>
+</article>
+<aside>
+  <div class="firstPage-success-project">
+  <div class="list-title-2">
+  <h2>已成功的筹资</h2>
+  <div class="list-success-project">
+    <ul>
+      <li><a href="#">果蔬种植/</a></li>
+      <li><a href="#">新鲜果品/</a></li>
+      <li><a href="#">生态养殖/</a></li>
+      <li><a href="#">有机蔬菜/</a></li>
+      <li><a href="#">生物科技/</a></li>
+    </ul>
+  </div>
+  <div class="success-project-list">
+    <div class="left-pic floatl"> <img src="styles/images/project_09.jpg"> </div>
+    <div class="right-message floatr">
+      <h5>有机蔬菜</h5>
+      <span class="left-pic-decoration">更天然，更绿色，专注于专业的蔬菜培养方式</span> <span  class="left-pic-decoration-2">筹资地点:</span> <span  class="left-pic-decoration-2">武汉</span> <span  class="left-pic-decoration-2">天津</span> <span  class="left-pic-decoration-2">哈尔滨</span><br/>
+      <p>融资目标：1500万 剩余时间：50天</p>
+      <span class="small-icn-1"><img src="styles/images/small-icn-1.jpg">浙江杭州</span> <span class="small-icn-2"><img src="styles/images/small-icn-2.jpg">1600</span> <span class="small-icn-3"><img src="styles/images/small-icn-3.jpg">8</span> <span class="percentage-2">100%</span><br/>
+      <span class="right-message-pink-line"></span> </div>
+  </div>
+  <div class="clear">
+  <div>
+  <div class="success-project-list2">
+    <div class="left-pic floatl"> <img src="styles/images/project_08.jpg"> </div>
+    <div class="right-message floatr">
+      <h5>有机蔬菜</h5>
+      <span class="left-pic-decoration">更天然，更绿色，专注于专业的蔬菜培养方式</span> <span  class="left-pic-decoration-2">筹资地点:</span> <span  class="left-pic-decoration-2">武汉</span> <span  class="left-pic-decoration-2">天津</span> <span  class="left-pic-decoration-2">哈尔滨</span><br/>
+      <p>融资目标：1500万 剩余时间：50天</p>
+      <span class="small-icn-1"><img src="styles/images/small-icn-1.jpg">浙江杭州</span> <span class="small-icn-2"><img src="styles/images/small-icn-2.jpg">1600</span> <span class="small-icn-3"><img src="styles/images/small-icn-3.jpg">8</span> <span class="percentage-2">100%</span><br/>
+      <span class="right-message-pink-line"></span> </div>
+  </div>
+  <div class="clear">
+  <div>
+    <div class="success-project-list3">
+      <div class="left-pic floatl"> <img src="styles/images/project_07.jpg"> </div>
+      <div class="right-message floatr">
+        <h5>有机蔬菜</h5>
+        <span class="left-pic-decoration">更天然，更绿色，专注于专业的蔬菜培养方式</span> <span  class="left-pic-decoration-2">筹资地点:</span> <span  class="left-pic-decoration-2">武汉</span> <span  class="left-pic-decoration-2">天津</span> <span  class="left-pic-decoration-2">哈尔滨</span><br/>
+        <p>融资目标：1500万 剩余时间：50天</p>
+        <span class="small-icn-1"><img src="styles/images/small-icn-1.jpg">浙江杭州</span> <span class="small-icn-2"><img src="styles/images/small-icn-2.jpg">1600</span> <span class="small-icn-3"><img src="styles/images/small-icn-3.jpg">8</span> <span class="percentage-2">100%</span><br/>
+        <span class="right-message-pink-line"></span> </div>
+    </div>
+  </div>
+  <div class="firstPage-bottom-look-more">
+    <h3>浏览更多项目</h3>
+  </div>
+  <div class="firstPage-bottom"></div>
+</aside>
+<div class="clear"></div>
+<!--footer-->
+<footer>
+  <iframe src="bottom.html"  scrolling="no" frameborder="0"></iframe>
+</footer>
+</body>
+</html>

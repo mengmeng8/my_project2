@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="styles/css/style.css" type="text/css" rel="stylesheet">
+<title>登陆</title>
+<script type="text/javascript">
+ function checkName(){
+      //获取元素的方式(1)
+      var userName=document.getElementById("userName");
+      if(userName.value.length==0){
+        alert("用户名不能为空！");
+        return false;
+      }
+      if(userName.value.length<3||userName.value.length>16){
+        alert("用户名的长度为3~16之间");
+        userName.select();//元素内容被选中
+        return false;
+      }
+      return true;
+    }
+    function checkUserPwd(){
+      //获取元素的方式(2)
+      var userPwd=document.myForm.userPwd.value;
+        if(userPwd.length==0){
+        alert("密码不能为空！");
+        return false;
+      }
+      if(userPwd.length<6){
+        alert("密码长度不能低于6位！");
+        return false;
+      }
+      for(var i=0;i<userPwd.length;i++){
+        var tmp=userPwd.charAt(i);
+        if(isNaN(tmp)){   //全局函数，检查是否是数字
+          alert("密码必须使用数字");
+          return false;
+        }
+      }
+      return true;
+    }
+    function checkForm(){
+      return checkName()&&checkUserPwd();
+    }
+</script>
+</head>
+<body>
+<!--头部-->
+<div class="header">
+  <div class="logo floatl"> </div>
+  <ul class="nav floatr">
+    <li><a href="firstPage.html">首页</a></li>
+    <li><a href="register.html">我要投资</a></li>
+    <li><a href="register.html">我要借款</a></li>
+    <li><a href="#">安全保障</a></li>
+    <li><a href="#">新手指引</a></li>
+    <li><a href="#">关于我们</a></li>
+  </ul>
+  <div class="clear"></div>
+</div>
+<!--body-->
+<form  name="myForm"  method="post" action="file:///F:/partners/register.html#" >
+<div class="content">
+  <div class="login">
+    <div class="login_box">
+    <div class="clear"></div>
+    <h2>用户登录</h2>
+      <dl>
+        <dt>用户名:</dt>
+        <dd><input type="text" name="userName" id="userName" placeholder="请输入用户名/手机号"></dd>
+      </dl>
+      <dl>
+        <dt>密&nbsp;&nbsp;码:</dt>
+        <dd><input type="password" name="userPwd" id="userPwd" placeholder="请输入密码"></d>
+      </dl>
+      <h5>忘记密码？<h5>
+        <div class="button" >
+        <a href="firstPage.html"><input type="button" value="登陆" class="login-btn" onclick="checkForm()"></a>
+    </div>
+    </div>
+  </div>
+</div>
+</form>
+<!--footer-->
+<footer>
+  <iframe src="bottom.html"  scrolling="no" frameborder="0"></iframe>
+</footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* CSS Document */
+ *{margin:0px;padding:0px;}
+ body{font-size:14px;font-family:microsoft yahei;}
+ ul li{list-style:none;}
+ img{border:none}
+ .clear{clear:both;}
+ .floatl{float:left;}
+ .floatr{float:right;}
+  a{color:black;text-decoration:none;}
+  .button a:hover{color:#f60;text-decoration:none;}
+ /* header*/
+ .header{width:1000px;margin:0 auto;}
+ .logo{background:url(../images/logo.png) no-repeat;width:237px;height:86px;}
+ .nav{font-size:16px;font-weight:bold;line-height:85px;}
+ .nav li{float:left;margin-right:60px;}
+  .nav a:link{color:black;text-decoration:none;}
+  .nav a:hover{color:#C6E993;text-decoration:none;}
+.span{padding-left:50px;}
+
+ /*content*/
+ .content{background:#3DAFC7 url(../images/login_bg1.jpg) no-repeat center;width:100%;height:449px;margin-top:10px;}
+ .login{width:1000px;margin:0 auto;}
+ .login_box{width:240px;height:260px;background-color:#F3F3F3;border-radius:10px;float:right;margin:150px 10px 0px 0px;box-shadow:3px 3px 3px 3px #ccc;}
+ h2{color:black;padding:10px 0px 0px 80px;}
+ h5{color:black;float:right;}
+ dl dt,dl dd{float:left;margin:30px 0px 10px 10px;}
+ dl dt{width:60px;font-size:14px;font-weight:bold;}
+ dl dd{width:160px;}
+ .button{width:100px;height:40px;background-color:#00A8E1;border-radius:5px;margin-top:20px;}
+ .login-btn{width:100px;height:40px;color:#fff;font-size:18px;text-align:center;line-height:30px;background-color:#00A8E1;border:0px;}
+  .button a:link{color:yellow;text-decoration:none;}
+  .button a:hover{color:#f60;text-decoration:none;}
+  /*footer*/
+iframe{width:100%;scrolling:no;}
+
+ 

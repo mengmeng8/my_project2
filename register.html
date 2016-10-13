@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="styles/css/register.css" type="text/css" rel="stylesheet">
+<title>信息注册</title>
+</head>
+<body>
+<!--头部-->
+<header>
+  <div class="container">
+  <div class="logo floatl"> </div>
+  <div class="clear"></div>
+  <div class="search floatr">
+  <div class="select_box floatl">
+    <select>
+      <option value="项目">项目</option>
+      <option value="项目1">项目1</option>
+    </select>
+  </div>
+  <input type="text" placeholder="请输入商品关键字" class="search_box" >
+  <div class="search_btn floatr">
+    <input type="button" class="search_btn1" >
+    </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="header_title">
+    <nav>
+    <ul class="nav ">
+      <li><a href="firstPage.html">首页</a></li>
+      <li><a href="project.html">众筹项目</a></li>
+      <li><a href="personal.html">众筹发布</a></li>
+      <li><a href="#">新手指引</a></li>
+      <li><a href="#">安全承诺</a></li>
+      <li><a href="#">联系我们</a></li>
+      <li><a href="#">社区公益</a></li>
+    </ul>
+    <nav>
+    <div class="header_btn"> <a href="login.html" class="login_btn"><span>登陆</span></a> <a href="register.html" class="reg_btn">注册</span></a> </div>
+   </div>
+</header>
+<!--article-->
+<article>
+  <div class="clear"></div>
+  <ul class="parts">
+    <li class="part1"><span class="num1">1</span>填写项目信息</li>
+    <li class="part2"><span class="num2">2</span>填写发起人信息</li>
+    <li class="part3"><span class="num3">3</span>设置回报</li>
+    <li class="part4"><span class="num4">4</span>等待审核</li>
+  </ul>
+  <div class="clear"></div>
+  <!--form-->
+  <section>
+    <div class="content">
+      <div class="left">
+        <dl>
+          <dt>产品名称:</dt>
+          <dd>
+            <input type="text" required="required">
+          </dd>
+        </dl>
+        <dl>
+          <dt>众筹金额:</dt>
+          <dd class="number2">
+            <input type="number" required="required" >
+            元 </dd>
+        </dl>
+        <dl>
+          <dt>资金用途:</dt>
+          <dd>
+            <input type="text" >
+          </dd>
+        </dl>
+        <dl>
+          <dt>截止日期:</dt>
+          <dd><span>
+            <select>
+              <option value="1">请选择年</option>
+              <option value="2">2016</option>
+              <option value="3">2017</option>
+              <option value="4">2018</option>
+            </select>
+            </span> <span>
+            <select>
+              <option value="0">请选择月</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+            </select>
+            </span> <span>
+            <select>
+              <option value="0">请选择日</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+            </select>
+            </span></dd>
+        </dl>
+        <dl>
+          <dt>产品地点:</dt>
+          <dd> <span>
+            <select>
+              <option value="0">山东省</option>
+            </select>
+            </span> <span>
+            <select>
+              <option value="请选择">请选择</option>
+              <option value="青岛">青岛</option>
+              <option value="潍坊">潍坊</option>
+            </select>
+            </span> <span>
+            <select>
+              <option value="请选择">请选择</option>
+            </select>
+            </span> </dd>
+        </dl>
+        <dl class="biaoqian">
+          <dt>添加标签:</dt>
+          <dd > <a href="#" ><span class="box">土地</span></a> <a href="#" > <span class="box"> 家禽</span></a> <a href="#" ><span class="box">水果</span> </a> <a href="#" ><span class="box" >其它</span></a> </dd>
+        </dl>
+        <dl>
+          <dt>收货地址:</dt>
+          <dd>
+            <input type="text" >
+          </dd>
+        </dl>
+        <dl>
+          <dt>运费:</dt>
+          <dd>
+            <input type="number" min="0">
+            元</dd>
+        </dl>
+        <dl>
+          <dt>回报内容:</dt>
+          <dd>
+            <textarea cols="90" rows="20">
+             </textarea>
+          </dd>
+        </dl>
+        <div class="clear"></div>
+      </div>
+      <div class="right"><img src="styles/images/ad.jpg"></div>
+      <div class="clear"></div>
+      <div class="bottom-box"> <span class="span0">
+        <input type="checkbox">
+        已阅读并同意</span> <span class="span1">《万田众筹发布条款》</span><br/>
+      </div>
+      <div class="button">
+        <div class="button_gray">
+          <h3> <a href="#">取消</a> </h3>
+        </div>
+        <div class="button_green">
+          <h3><a href="#">发布</a></h3>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </section>
+</article>
+<!--footer-->
+<footer>
+  <iframe src="bottom.html"  scrolling="no" frameborder="0"></iframe>
+</footer>
+</body>
+</html>
